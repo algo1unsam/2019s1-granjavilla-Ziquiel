@@ -25,5 +25,6 @@ class Trigo {
 		else
 			return 200
 	}
+	method esMercado()=false
 }
 

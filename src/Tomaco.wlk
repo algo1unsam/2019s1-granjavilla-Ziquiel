@@ -17,4 +17,5 @@ class Tomaco {
 	method chauTablero()=self.position().y()==10
 	method aPuntoDeCosecha()= true
 	method valor()=80
+	method esMercado()=false
 }

@@ -3,7 +3,10 @@ import Trigo.*
 import Maiz.*
 import Hector.*
 import wollok.game.*
+import Mercado.*
 program FarmVilleGame{
+const mer1= new Mercado (position=(game.at(9, 9)),oro=10000)
+const mer2= new Mercado (position=(game.at(9, 0)),oro=10000)
 	//	CONFIG	
 	game.title("FarmVilleGame")
 	game.height(10)
@@ -11,6 +14,8 @@ program FarmVilleGame{
 	game.ground("ground.png")
 //	VISUALES
 	game.addVisual(hector)
+	game.addVisual(mer1)
+	game.addVisual(mer2)
 // 	Teclado
 //	moves hector
 	keyboard.up().onPressDo{ hector.move(hector.position().up(1)) }
@@ -27,8 +32,12 @@ program FarmVilleGame{
 	keyboard.c().onPressDo{hector.cosechar()}
 //	vender
 	keyboard.v().onPressDo{hector.vender()}
-//	informe
+//	informe hector
 	keyboard.space().onPressDo{hector.informe()}
+//	informe Mercado1
+	keyboard.z().onPressDo{mer1.informe()}
+//	informe Mercado2
+	keyboard.x().onPressDo{mer2.informe()}
 //	START
 	game.start()
 }

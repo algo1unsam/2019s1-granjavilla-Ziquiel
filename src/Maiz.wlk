@@ -8,4 +8,5 @@ class Maiz {
 		evolucion =1
 	}
 	method aPuntoDeCosecha()= evolucion==1
+	method esMercado()=false
 }

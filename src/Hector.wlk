@@ -58,11 +58,14 @@ object hector {
 		game.removeVisual(cosecha)
 	}
 	method vender(){
+		if(self.esMercado()){
 		oro+=canasta.sum({especies=>especies.valor()})
-		canasta.clear()
+		game.colliders(self).first().compraTotal(canasta)
+		canasta.clear()}
 	}
 	method informe(){
 		game.say(self,"tengo "+oro+" monedas, y "+canasta.size()+" plantas para vender")
 	}
+	method esMercado()=game.colliders(self).first().esMercado()
 }
 
